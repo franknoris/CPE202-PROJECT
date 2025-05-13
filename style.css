@@ -368,6 +368,7 @@ span {
 @media (max-width: 360px) {
     .slide {
         padding: 5px; /* Further reduced to minimize outer space */
+        margin: 2px;
         gap: 8px;
     }
     .image {
