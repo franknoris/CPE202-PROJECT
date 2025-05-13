@@ -225,7 +225,7 @@ span {
 @media (max-width: 768px) {
     .slide-content h2 .typing,
     .slide-content h2 .static {
-        font-size: 24px;
+        font-size: 28px;
         width: 100%;
         margin: 0 auto;
         text-align: center;
@@ -235,7 +235,7 @@ span {
         margin-top: -6px;
     }
     .slide-content p .matric {
-        font-size: 14px;
+        font-size: 16px;
         text-align: center;
     }
 }
@@ -265,51 +265,75 @@ span {
     width: calc(100% / var(--slide-count));
     height: 100%;
     flex-shrink: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
     align-items: center;
+    justify-items: center;
     padding: 30px;
-    gap: 40px;
+    gap: 20px;
+    overflow-y: auto;
 }
 
 @media (max-width: 768px) {
     .slide {
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        justify-items: center;
+        align-content: start;
+        padding: 20px;
+        gap: 15px;
     }
 
     .slide-content {
+        grid-row: 2;
         max-width: 90%;
-        margin: 0;
-        padding: 10px;
-        order: 2;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-bottom: 50px; /* Space for radio dots */
     }
 
     .image {
-        width: 150px;
-        height: 150px;
-        margin: 0 auto 15px;
-        order: 1;
+        grid-row: 1;
+        width: 160px;
+        height: 160px;
+        margin: 0;
+        border: 4px solid #fff;
     }
 
     .slide-content p {
-        font-size: 14px;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .slide-link {
+        padding: 10px 20px;
+        font-size: 15px;
+        border-radius: 25px;
     }
 }
 
 @media (max-width: 480px) {
     .image {
-        width: 120px;
-        height: 120px;
-        margin: 0 auto 15px;
+        width: 130px;
+        height: 130px;
+    }
+
+    .slide-content h2 .typing,
+    .slide-content h2 .static {
+        font-size: 24px;
+    }
+
+    .slide-content p .matric {
+        font-size: 14px;
     }
 }
 
 .slide-content {
     max-width: 40%;
-    margin-right: 20px;
     padding: 10px;
 }
 
@@ -336,8 +360,8 @@ span {
 }
 
 .image {
-    height: 220px;
     width: 220px;
+    height: 220px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -345,10 +369,9 @@ span {
     align-items: center;
     background: linear-gradient(135deg, #9b59b6, #8e44ad, #6c3483);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    margin-left: 40px;
     position: relative;
     z-index: 3;
-    aspect-ratio: 1/1;
+    flex-shrink: 0;
 }
 
 .image img {
@@ -382,19 +405,19 @@ input[type="radio"] {
     transform: translateX(calc(-200% / var(--slide-count)));
 }
 #slide4:checked ~ .slides {
-    transform: translateX(calc(-300% / var(---slide-count)));
+    transform: translateX(calc(-300% / var(--slide-count)));
 }
 #slide5:checked ~ .slides {
-    transform: translateX(calc(-400% / var(---slide-count)));
+    transform: translateX(calc(-400% / var(--slide-count)));
 }
 #slide6:checked ~ .slides {
-    transform: translateX(calc(-500% / var(---slide-count)));
+    transform: translateX(calc(-500% / var(--slide-count)));
 }
 #slide7:checked ~ .slides {
-    transform: translateX(calc(-600% / var(---slide-count)));
+    transform: translateX(calc(-600% / var(--slide-count)));
 }
 #slide8:checked ~ .slides {
-    transform: translateX(calc(-700% / var(---slide-count)));
+    transform: translateX(calc(-700% / var(--slide-count)));
 }
 
 .dots {
