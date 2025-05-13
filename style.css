@@ -321,15 +321,15 @@ span {
         grid-template-rows: auto auto;
         justify-items: center;
         align-content: start;
-        padding: 15px;
+        padding: 10px; /* Reduced padding to minimize outer margins */
         gap: 10px;
     }
     .slide-content {
         grid-row: 2;
-        max-width: 98%; /* Increased width for small screens */
-        padding: 12px; /* Slightly increased for better text accommodation */
+        max-width: 100%; /* Full width to eliminate margins */
+        padding: 8px; /* Reduced padding for more text space */
         background: rgba(255, 255, 255, 0.9);
-        border-radius: 8px;
+        border-radius: 6px; /* Slightly smaller border-radius */
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin-bottom: 40px;
@@ -359,15 +359,15 @@ span {
         height: 120px;
     }
     .slide-content {
-        max-width: 98%; /* Maintain increased width */
-        padding: 10px;
-        margin: 5px;
+        max-width: 100%; /* Full width */
+        padding: 6px; /* Further reduced padding */
+        margin: 0; /* Removed margin for max width */
     }
 }
 
 @media (max-width: 360px) {
     .slide {
-        padding: 10px;
+        padding: 5px; /* Further reduced to minimize outer space */
         gap: 8px;
     }
     .image {
@@ -375,10 +375,13 @@ span {
         height: 100px;
     }
     .slide-content {
-        max-width: 98%; /* Maximize width for very small screens */
-        padding: 8px; /* Reduced but sufficient for text */
+        max-width: 100%; /* Full width for very small screens */
+        padding: 5px; /* Minimal padding for max text space */
         margin-bottom: 30px;
-        word-wrap: break-word; /* Ensure text wraps */
+        margin-left: 0; /* Explicitly remove any leftover margins */
+        margin-right: 0;
+        word-wrap: break-word;
+        border-radius: 4px; /* Smaller border-radius for compact look */
     }
     .slide-content p {
         font-size: 12px;
@@ -474,7 +477,7 @@ input[type="radio"] {
     transform: translateX(calc(-600% / var(--slide-count)));
 }
 #slide8:checked ~ .slides {
-    transform: translateX(calc(-700% / var(--slide-count)));
+    transform: translateX(calc(-700% / var(---slide-count)));
 }
 
 .dots {
@@ -566,9 +569,7 @@ input[type="radio"] {
 }
 
 .contact button {
-    padding: 8px
-
-;
+    padding: 8px;
     background-color: #9b59b6;
     color: #fff;
     border: none;
