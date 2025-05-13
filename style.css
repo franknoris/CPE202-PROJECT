@@ -330,6 +330,9 @@ span {
     .slide-content p .matric {
         font-size: 14px;
     }
+    .slide-content {
+        margin: 5px;
+    }
 }
 
 .slide-content {
